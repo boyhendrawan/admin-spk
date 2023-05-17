@@ -1,4 +1,4 @@
-import { Modal } from '../../../node_modules/flowbite/dist/flowbite.js';
+// import { Modal } from '../../../node_modules/flowbite/dist/flowbite.js';
 // var asdfjkl = require('flowbite');
 
 const $modalElement = document.querySelector('#modalEl');

@@ -2,12 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .d-message-error{
+    @apply px-2 font-medium text-sm text-rose-600 italic;
+  }
+  .pages{
+    @apply hidden;
+  }
+  .collect-btn{
+    @apply col-span-6 mt-4  flex gap-x-4 justify-end;
+  }
+  .collect-btn button{
+    display: none;
+  }
+  .wrapper-dot-pagination{
+    @apply  h-full w-full inline-flex box-border  gap-x-5 items-start justify-between p-0 m-0 border-t-2 border-t-slate-400;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wrapper-dot-pagination .active::before{
+    @apply bg-main ;
+  }
+  .wrapper-dot-pagination .done::before{
+    @apply bg-emerald-300;
+  }
+  .wrapper-dot-pagination .active>span{
+     @apply absolute  inline-flex  bg-main w-[1.3rem] h-[1.3rem] z-10 animate-ping  rounded-full -top-2.5 -right-2.5  ; 
+  }
+  .wrapper-dot-pagination li {
+    @apply relative text-center  pt-4 ;
+  }
+ 
+  .wrapper-dot-pagination li:before{
+    transform:  translate(-50%,-50%);
+    @apply top-0 left-[30%]  absolute w-[1.3rem] h-[1.3rem] content-[""] inline-block transition-all bg-slate-500  rounded-full border-none cursor-pointer;
+  }
+
+}
+.style-input{
+  @apply shadow-sm  border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500;
+}
 /* chart styles */
 .btn-flash{
   @apply  relative after:transition-width after:duration-300 after:ease-in-out after:absolute after:w-0 after:h-full after:top-0 after:left-0 after:bg-black/30  after:content-[''];
 }
+
 .input-error{
-  @apply ring-2 ring-pink-600 focus:ring-pink-500;
+  @apply bg-rose-500 text-white;
+}
+.input-error::placeholder {
+  color: white;
+}
+
+.input-error:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: white;
+}
+
+.input-error::-ms-input-placeholder { /* Microsoft Edge */
+ color: white;
 }
 .apexcharts-tooltip {
   @apply bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-400 border-0 rounded-lg shadow-lg !important;

@@ -108,8 +108,9 @@
         </div>
       </div>
     </section>
-    <script src="assets/js/form-validation.js"></script>
-    <script>
+    <!-- <script src="assets/js/form-validation.js"></script> -->
+    <script type="module">
+      import validation from "./assets/js/form-validation.js";
       const username = document.getElementById("username");
       const usernameMessage = document.getElementById("usernameMessage");
       const username1 = document.getElementById("username2");
@@ -119,10 +120,11 @@
         username,
         usernameMessage,
         "Your email must included @",
-        btnSubmit,
         (e) => e.includes("@") ? true:false
       );
-
+      if(validation){
+        console.log("true")
+      }else console.log("false");
     </script>
     
   </body>
